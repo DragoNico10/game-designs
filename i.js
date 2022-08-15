@@ -4,7 +4,7 @@ function setup() {
   }
   
   function draw() {
-    background(220);
+    clear()
     push()
     translate(50, 50)
     text("Triplicate", 0, -35)
@@ -170,6 +170,8 @@ function setup() {
     let r1=2
     let r2=10
     translate(-20, -20)
+    strokeWeight(1)
+    stroke(0)
     beginShape();
     vertex(0-r1, 0-r1);
     vertex(0, 0-r2)
@@ -179,7 +181,7 @@ function setup() {
     vertex(0, r2)
     vertex(0-r1, r1)
     vertex(0-r2, 0)
-    endShape();
+    endShape(CLOSE);
     translate(40, 40)
     beginShape();
     vertex(0-r1, 0-r1);
@@ -190,7 +192,8 @@ function setup() {
     vertex(0, r2)
     vertex(0-r1, r1)
     vertex(0-r2, 0)
-    endShape();
+    endShape(CLOSE);
+    noStroke()
     translate(-20,-20)
     fill('red')
     ellipse(3, -3, 15)
